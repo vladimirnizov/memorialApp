@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+      <button mat-icon-button (click)="onToggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div>
+      <a routerLink="/">Memorial Line</a>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+      <ul fxLayout fxLayoutGap=20px class="navigation-items">
+        <li>
+          <a routerLink="/gallery">Gallery</a>
+        </li>
+        <li>
+          <a routerLink="/searchMemorial">Search Memorial</a>
+        </li>
+        <li *ngIf="isAuth">
+          <a routerLink="/createMemorial">Create Memorial</a>
+        </li>
+        <li *ngIf="!isAuth">
+          <a routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!isAuth">
+          <a routerLink="/signup">Signup</a>
+        </li>
+        <li *ngIf="isAuth">
+          <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+        </li>
+        <li *ngIf="pendingExists && isAuth">
+          <a routerLink="/!!!"><img src="assets/images/notification.jpg" alt="Notification" height="40" width="40"></a>
+        </li>
+      </ul>
+    </div>
+</mat-toolbar>

@@ -1,0 +1,117 @@
+<p fxLayoutAlign="center center" class="mat-h1" style="background-color: black; color:beige">Next Generations to Holocaust and Heroism Legacy - Israel</p>
+<div *ngIf="dataLoaded">
+    <p-carousel   
+        headerText="" 
+        [value]="recordsGallery" 
+        numVisible="1"
+        shrinked="true"
+        effectDuration="1s"
+        >
+        <!-- circular="circular" 
+        autoplayInterval="3000" -->
+        <!-- <div class="countainerBackPicture"> -->
+            <ng-template let-record pTemplate="record">
+                <div class="ui-grid ui-grid-responsive countainerBackPicture">
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <div class="ui-grid-col">
+                            <div class="ui-grid-row" fxLayoutGap="100px">
+                                <div>
+                                    <div class="ui-grid-row" >
+                                        <div class="ui-grid-col-12">
+                                            <img [src]='record.munzah.photoUrl' height="400" width="450">
+                                        </div>
+                                    </div>
+                                    <div class="ui-grid-row">
+                                        <div class="ui-grid-col-5"></div>
+                                        <div class="ui-grid-col-6">
+                                            <h3>{{record.munzah.givenName}} {{record.munzah.familyName}}</h3>
+                                            <h5>{{record.munzah.birthDate}} - {{record.munzah.deathDate}}</h5>
+                                        </div>
+                                    </div>
+ 
+                                    <div class="ui-grid-row">
+                                        <div class="ui-grid-col-6">
+                                            <span style="width:2em; line-height:2em" class="flag-icon flag-icon-{{ record.munzah.country | lowercase}}"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="ui-grid-row">
+                                        <div class="ui-grid-col-12">
+                                            <img [src]='record.manziah.photoUrl' height="400" width="450">
+                                        </div>
+                                    </div>
+                                    <div class="ui-grid-row">
+                                        <div class="ui-grid-col-6">
+                                            <h3>{{record.manziah.givenName}} {{record.manziah.familyName}}</h3>
+                                        </div>
+                                        <div class="ui-grid-col-5"></div>
+                                        <div class="ui-grid-col-6">
+                                            <h3>{{record.manziah.relationship}}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="ui-grid-row">
+                                        <div class="ui-grid-col-6">
+                                            <span style="width:2em; line-height:2em" class="flag-icon flag-icon-{{ record.manziah.country | lowercase}}"></span>
+                                        </div>
+                                        <div class="ui-grid-col-5"></div>
+                                    </div>                   
+                                </div>
+                            </div>
+                            <div class="ui-grid-row" fxLayoutAlign="center center">
+                                <div class="ui-grid-col-24">
+                                    <h1>{{ record.manziah.memorialText }}</h1>
+                                    <h1>{{ record.munzah.memorialText }}</h1>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                    <button id="{{record.munzah.givenName}}" class="candleButton" (click)="addCandle(record)"><img id="gif_candle" src="assets/images/candle.gif" alt="candle Icon" style="width:128px;height:128px;">
+                    </button>
+                </div>
+
+                <div>
+                    <p-carousel
+                    headerText="other manzihim" 
+                    [value]="record.othersManziah" 
+                    numVisible="1"
+                    shrinked="true"
+                    effectDuration="1s"
+                    >
+                            <!-- shrinked="true" -->
+                        <ng-template let-otherManziah pTemplate="otherManziah">
+                            <div class="ui-grid ui-grid-responsive">
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <div class="ui-grid-col">
+                                        <div class="ui-grid-row" fxLayoutGap="100px">
+                                            <div>
+                                                <div class="ui-grid-row" >
+                                                    <div class="ui-grid-col-12">
+                                                        <img [src]='otherManziah.manziah.photoUrl' height="150" width="150">
+                                                    </div>
+                                                </div>
+                                                <div class="ui-grid-row">
+                                                    <div class="ui-grid-col-6">
+                                                        <span style="width:2em; line-height:2em" class="flag-icon flag-icon-{{ otherManziah.manziah.country | lowercase}}"></span>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui-grid-col-1"></div>
+                                    <div class="ui-grid-col">
+                                        <div class="ui-grid-row" fxLayoutAlign="center center">
+                                            <div class="ui-grid-col-24">
+                                                <h4>{{ otherManziah.manziah.memorialText }}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-carousel>        
+                </div>
+            </ng-template>
+        <!-- </div> -->
+    </p-carousel>
+</div>

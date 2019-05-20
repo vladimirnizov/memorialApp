@@ -1,0 +1,43 @@
+/* .logoheader {
+    display: flex;
+    height: 100px;
+    background-color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+   
+} */
+
+#gif_candle {
+    position: fixed;
+    bottom: 7em;
+}
+h2 {
+    text-align: end;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+img {
+    align-self: flex-start;
+    
+}
+
+mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+
+mat-sidenav-container {
+    height: 30%;
+}
+
+mat-sidenav {
+    width: 250px;
+}
+
+/* app-footer { 
+    position: fixed;
+    bottom: 0;
+}  */
+
+/* body, html {
+    background: url ("/assets/images/mygif.gif");
+}  */

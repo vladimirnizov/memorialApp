@@ -1,0 +1,14 @@
+.container {
+    background-color: black;
+    /* width: 100vh;
+    height: 100vh; */
+    /* flex-wrap: wrap;
+    line-height: 100px;
+    margin: 10px; */
+}
+
+.fit-picture {
+    width: 240px;
+    height: 257px;
+    /* max-height: 100%; */
+}

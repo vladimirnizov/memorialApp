@@ -1,0 +1,29 @@
+/* mat-toolbar {
+    color:  rgb(243, 236, 135);
+} */
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+a:active {
+    color: lightgray;
+}
+
+.navigation-items {
+    list-style: none;
+    padding: none;
+    margin: 0;
+}
+
+.nav-caption {
+    display: inline-block;
+    padding: 6px;
+}
+
+/* img {
+    size: 15px;
+    
+} */

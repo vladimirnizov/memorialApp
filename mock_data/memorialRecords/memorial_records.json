@@ -1,0 +1,86 @@
+{
+    "users": [
+        {
+            "email": "test@test.com",
+            "password": "1234"
+        }
+    ],
+    "memorialRecords":[
+        {
+            "recordId": 1,
+            "munzah": {
+                "munzahId": 1,
+                "name": "Saba Babu",
+                "birthDate": "30.12.1980",
+                "deathDate": "31.12.1981",
+                "country": "Argentina",
+                "photoUrl":  "https://picsum.photos/600/400/?51",
+                "memorialText": "bla bla bla"
+            },
+            "manziah": {
+                "manziahId": 1,
+                "email": "david@gmail.com",
+                "name": "david",
+                "country": "israel",
+                "photoUrl": "https://picsum.photos/600/400/?50"
+            }
+        },
+        {
+            "recordId": 2,
+            "munzah": {
+                "munzahId": 2,
+                "name": "Savta Vatuu",
+                "birthDate": "30.12.1980",
+                "deathDate": "31.12.1981",
+                "country": "Brasil",
+                "photoUrl":  "https://picsum.photos/600/400/?52",
+                "memorialText": "love glida and u"
+            },
+            "manziah": {
+                "manziahId": 2,
+                "email": "minko@gmail.com",
+                "name": "Sason",
+                "country": "israel",
+                "photoUrl": "https://picsum.photos/600/400/?53"
+            }
+        },
+        {
+            "recordId": 3,
+            "munzah": {
+                "munzahId": 3,
+                "name": "Saba Babu",
+                "birthDate": "30.12.1980",
+                "deathDate": "31.12.1981",
+                "country": "Argentina",
+                "photoUrl":  "https://picsum.photos/600/400/?54",
+                "memorialText": "bla bla bla"
+            },
+            "manziah": {
+                "manziahId": 3,
+                "email": "david@gmail.com",
+                "name": "david",
+                "country": "israel",
+                "photoUrl": "https://picsum.photos/600/400/?55"
+            }
+        },
+        {
+            "recordId": 4,
+            "munzah": {
+                "munzahId": 4,
+                "name": "Saba Babu",
+                "birthDate": "30.12.1980",
+                "deathDate": "31.12.1981",
+                "country": "Argentina",
+                "photoUrl":  "https://picsum.photos/600/400/?55",
+                "memorialText": "bla bla bla"
+            },
+            "manziah": {
+                "manziahId": 4,
+                "email": "david@gmail.com",
+                "name": "david",
+                "country": "israel",
+                "photoUrl": "https://picsum.photos/600/400/?57"
+            }
+        }
+    ]
+}

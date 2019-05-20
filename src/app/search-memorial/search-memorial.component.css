@@ -1,0 +1,33 @@
+
+.container {
+    background-color: black;
+    /* border: 1px solid green; */
+    /* background-image: url("/assets/images/remembrance-hebrew-holocaust-symbol-260nw-133112138.jpg"); */
+}
+
+.searchInput {
+    padding: 20px;
+    height: 1500px;
+    /* background-image: url("/assets/images/remembrance-hebrew-holocaust-symbol-260nw-133112138.jpg"); */
+    /* background-color: beige; */
+}
+
+.noRecordFound {
+    background-color: white;
+}
+
+form {
+    background-color: peru;
+    /* width: 50%; */
+    height: 200px;
+    /* opacity: 0.7; */
+
+}
+mat-from-field {
+    width: 300px;
+    
+}
+ p {
+     color: white;
+     font-weight: bolder;
+ }

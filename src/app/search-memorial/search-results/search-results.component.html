@@ -1,0 +1,30 @@
+<!-- <li>Name: {{memorialRecord.munzah.givenName}}</li>
+<li>Family name: {{memorialRecord.munzah.familyName}}</li>
+<li>Country: {{memorialRecord.munzah.country}}</li>
+<li>Birth date: {{memorialRecord.munzah.birthDate}}</li>
+<li>{{memorialRecord.munzah.deathDate}}</li>
+<li>{{memorialRecord.munzah.photoUrl}}</li>
+<li>{{memorialRecord.munzah.memorialText}}</li> -->
+<!-- <p>{{memorialRecord.munzah.givenName}}</p>
+<li>Name: {{memorialRecord.munzah.givenName}}</li> -->
+
+<div class="displayResults" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px">
+    <mat-card class="munzah-card">
+      <mat-card-header>
+        <mat-card-title>{{memorialRecord.munzah.givenName}} {{memorialRecord.munzah.familyName}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{memorialRecord.munzah.photoUrl}}">
+      <mat-card-content>
+        <p>
+          {{memorialRecord.manziah.memorialText}}
+        </p>
+      </mat-card-content>
+      <mat-card-footer>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-6">
+            <span style="width:2em; line-height:2em" class="flag-icon flag-icon-{{ memorialRecord.munzah.country | lowercase}}"></span>
+          </div>
+        </div>
+      </mat-card-footer>
+    </mat-card>  
+</div>

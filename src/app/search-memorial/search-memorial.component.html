@@ -1,0 +1,27 @@
+<section class="container">
+  <div class="searchInput">
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px" #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">    
+      <div>
+        <mat-form-field>
+          <input type="text"
+            matInput 
+            placeholder="Enter Family Name" 
+            ngModel name="user_search_data">
+        </mat-form-field>
+   
+        <button type="submit" mat-raised-button>Find</button>
+      </div>
+      <div>
+        <p *ngIf="noRecord">
+          no records was found!
+        </p>
+      
+      </div>
+    </form>
+    <div fxLayoutAlign="center center" fxLayoutGap="60px" *ngFor="let record of records">
+      <app-search-results [MemorialRecord]=record></app-search-results>
+    </div>
+  </div>
+</section>
+
+

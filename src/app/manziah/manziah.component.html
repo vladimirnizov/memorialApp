@@ -1,0 +1,24 @@
+<div class="displayResults" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px">
+  <mat-card class="munzah-card">
+    <mat-card-header>
+      <mat-card-title>{{givenName}} {{familyName}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{photoUrl}}">
+    <mat-card-content>
+      <p>
+        {{memorialText}}
+      </p>
+    </mat-card-content>
+    <mat-card-footer>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">
+          <span style="width:2em; line-height:2em" class="flag-icon flag-icon-{{ country | lowercase}}"></span>
+        </div>
+      </div>
+    </mat-card-footer>
+    <!-- <mat-card-actions>
+      <button (click)="accept()">Accept</button>
+      <button (click)="decline()">Decline</button>
+    </mat-card-actions> -->
+  </mat-card>  
+</div>

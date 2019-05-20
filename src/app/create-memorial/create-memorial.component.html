@@ -1,0 +1,177 @@
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step>
+      <!-- <mat-step [stepControl]="form_munzah"> -->
+      <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #form_munzah="ngForm" (ngSubmit)="onSubmitMunzah(form_munzah)">
+        <ng-template matStepLabel>Fill out a memorial</ng-template>
+        <mat-form-field>
+          <input type="text"
+          matInput 
+          placeholder="First Name" 
+          ngModel name="given_name"
+          required
+          minlength="3"
+          maxlength="12"
+          pattern="[a-zA-Zא-ת]*">
+        </mat-form-field>
+        <mat-form-field>
+          <input 
+          type="text" 
+          matInput 
+          placeholder="Family Name"
+          ngModel name="family_name"  
+          required
+          minlength="3"
+          maxlength="12"
+          pattern="[a-zA-Zא-ת]*">
+        </mat-form-field>
+        <mat-form-field>
+          <input
+          matInput 
+          placeholder="Birthdate" 
+          [matDatepicker]="picker" 
+          [max]="maxDate"
+          ngModel name="birth_date">
+        <mat-datepicker-toggle 
+          matSuffix [for]="picker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+          matInput 
+          placeholder="Deathdate" 
+          [matDatepicker]="picker2" 
+          [max]="maxDate" 
+          ngModel name="death_date">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select 
+            placeholder="Place of Birth" 
+            ngModel name="country"
+            required>
+            <mat-option *ngFor="let countryObj of countries" [value]="countryObj.countryCode">
+              {{ countryObj.countryName }}
+              <span style="width:1em; line-height:1em; float:right" class="flag-icon flag-icon-{{ countryObj.countryCode | lowercase}}"></span>
+            </mat-option>
+          </mat-select>
+          
+        </mat-form-field>
+        <p-fileUpload 
+          customUpload="true" 
+          accept="image/*" 
+          maxFileSize="250000" 
+          (uploadHandler)="onUploadChange($event)"
+          previewWidth=70
+          auto="true"
+          required
+        >
+        </p-fileUpload>      
+        <div>
+          <button type="submit" [disabled]="form_munzah.invalid || imageFileInBase64.length == 0" mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <section *ngIf="!munzahDataAssigned">
+        <h1>This is the munzachim that answers the name you entered, Please Choose the relevant one</h1>
+        <div fxLayoutAlign="center center" fxLayoutGap="60px" *ngFor="let record of existingRecordsDocument | async">
+          <a (click)="chooseFromExistingRecords(record)">
+            <app-exisitnig-records [ExistingRecord]=record></app-exisitnig-records>
+          </a>
+          <a (click)="onNewRecord()">
+              <mat-card class="munzah-card">
+                <mat-card-content>
+                  <h2>
+                    new record
+                  </h2>
+       
+<!-- 
+        <a (click)="onNewRecord()">
+          <mat-card class="munzah-card">
+            <mat-card-content>
+              <h2>
+                new record
+              </h2> -->
+            </mat-card-content>
+          </mat-card>
+        </a>
+      </div>
+      </section>
+      <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #form_manziah="ngForm" (ngSubmit)="onSubmitManziah(form_manziah)">
+        <ng-template matStepLabel>Fill out your details</ng-template>
+        <mat-form-field>
+          <input 
+          type="text" 
+          matInput 
+          placeholder="Your first Name"
+          ngModel 
+          name="given_name"
+          required
+          minlength="3"
+          maxlength="12"
+          pattern="[a-zA-Zא-ת]*">
+        </mat-form-field>
+        <mat-form-field>
+          <input 
+          type="text" 
+          matInput 
+          placeholder="Your last Name"
+          ngModel 
+          name="family_name"
+          required
+          minlength="3"
+          maxlength="12"
+          pattern="[a-zA-Zא-ת]*">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Relationship" ngModel name="relationship"
+          required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select
+            placeholder="Place of Birth" 
+            ngModel name="country"
+            required>
+              <mat-option *ngFor="let countryObj of countries" [value]="countryObj.countryCode">
+                {{ countryObj.countryName }}
+                <span style="width:1em; line-height:1em; float:right" class="flag-icon flag-icon-{{ countryObj.countryCode | lowercase}}"></span>
+              </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p-fileUpload 
+          customUpload="true" 
+          accept="image/*" 
+          maxFileSize="250000" 
+          (uploadHandler)="onUploadChange($event)"
+          auto="true"
+          required
+        ></p-fileUpload>
+        <mat-form-field>
+          <input
+          type="text"
+          matInput 
+          placeholder="His/Her Story" 
+          ngModel name="memorial_text">
+        </mat-form-field>
+        <div>
+          <!-- <button mat-button matStepperPrevious>Back</button> -->
+          <button mat-button mat-raised-button matStepperPrevious>Back</button>
+          <button type="submit" [disabled]="form_manziah.invalid || munzahDataAssigned == false || imageFileInBase64.length == 0" mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+        What would you like to do now?
+    <div>
+      <button mat-button mat-raised-button matStepperPrevious>Back</button>
+        <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+      <button mat-button mat-raised-button (click)="onStop()">Cancel</button>
+        <!-- <button mat-button (click)="stepper.reset()">Submit</button> -->
+      <button type="submit" mat-raised-button (click)="onSubmitFinalForm()">Submit</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

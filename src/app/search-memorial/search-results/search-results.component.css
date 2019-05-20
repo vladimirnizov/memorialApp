@@ -1,0 +1,18 @@
+.displayResults {
+  width: 400px;
+  height: 600px;
+  display: flex;
+}
+
+.munzah-card {
+    width: 400px;
+    height: 450px;
+    margin:auto;  
+    vertical-align:middle;
+    justify-content: center;
+}
+  
+  /* .munzah-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  } */

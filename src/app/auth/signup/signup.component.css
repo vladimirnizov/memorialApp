@@ -1,0 +1,33 @@
+.container {
+    background-color: black;
+    height: 650px;
+    position: relative;
+    /* border: 3px solid green; */
+}
+
+mat-card {
+    width: 350px;
+    height: 500px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 38%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: beige;
+    /* padding: 2px, yellow;   */
+}  
+
+mat-card-content{
+    display: flex;
+}
+
+/* .login-card {
+    width: 400px;
+    display: flex;
+    align-self: center;
+} */
+
+mat-from-field {
+    width: 450px;
+}

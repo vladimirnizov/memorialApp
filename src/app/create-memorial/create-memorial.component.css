@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+}
+
+.munzah-card {
+    width: 200px;
+    height: 250px;
+    margin:auto;  
+    vertical-align:middle;
+    justify-content: center;
+}
+
+img {
+    border-image-slice: fill;
+    object-fit: cover;
+    width: 40;
+    height: 40;
+}

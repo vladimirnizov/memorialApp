@@ -1,0 +1,39 @@
+.footer {
+    background-color: beige;
+    height: 100px;
+    width: 2000px;
+    /* justify-content: center; */
+    /* text-align: center; */
+    position: fixed;
+    bottom: 0;
+}
+.logo {
+    display: flex;
+    align-items: flex-start;
+    justify-items: center;
+}
+
+img {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+a:hover,
+a:active {
+    color: lightgray;
+}
+
+.navigation-items {
+    list-style: none;
+    padding: none;
+    margin: 0;
+}

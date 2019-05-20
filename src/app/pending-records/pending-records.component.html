@@ -1,0 +1,28 @@
+<section>
+  <div fxLayoutAlign="center center" fxLayoutGap="60px" *ngFor="let record of pendingRecords | async">
+    <!-- <a (click)="chooseFromExistingRecords(record)"> -->
+      <!-- <app-exisitnig-records [ExistingRecord]=record></app-exisitnig-records> -->
+      <div *ngIf="record.payload.doc.data().pendingData.length > 0">
+          <!-- show the picture of existing munzah -->
+          <app-exisitnig-records [ExistingRecord]=record></app-exisitnig-records>
+      </div>
+      <div fxLayoutAlign="center center" fxLayoutGap="60px" *ngFor="let pendingData of record.payload.doc.data().pendingData">
+          <!-- <a (click)="chooseFromExistingRecords(record, pendingData)"> -->
+            <app-manziah [PendingData]=pendingData></app-manziah>
+            <!-- <div *ngFor="let c of chatItems">Child says: {{ c }}</div> -->
+            <button (click)="acceptManziah(record, pendingData)">accept</button>
+            <button (click)="declineManziah(record, pendingData)">decline</button>
+          <!-- </a> -->
+      </div>
+        
+        <!-- <form [formGroup]="ngForm" (ngSubmit)="onSubmit(buttonType)"> -->
+          
+          <!-- <app-manziah [PendingData]=pendingData></app-manziah>
+          <button>Next</button>
+          <button>Previous</button> -->
+        <!-- </form> -->
+      <!-- </div> -->
+      
+    <!-- </a> -->
+  </div>
+</section>

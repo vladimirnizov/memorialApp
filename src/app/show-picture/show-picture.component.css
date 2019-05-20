@@ -1,0 +1,15 @@
+head {
+    background-color: black;
+}
+
+
+.countainerBackPicture {
+    background-image: url('/assets/images/chains.jpg');  
+    background-position: 800px;
+    height: 120%;
+}
+.candleButton{
+	border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
